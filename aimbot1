@@ -1,5 +1,5 @@
-script.Name = "AimbotTool"
-script.Parent = game.Players.LocalPlayer.Backpack.aimbot
+script.Name = "aimbot"
+script.Parent = game.Players.LocalPlayer.Backpack.AimbotTool
 script.Disabled = true
 runservice = game:GetService("RunService")
 function startaim(p)
