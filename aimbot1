@@ -1,0 +1,19 @@
+script.Name = "aimbot"
+script.Parent = game.Players.LocalPlayer.Backpack
+script.Disabled = true
+runservice = game:GetService("RunService")
+function startaim(p)
+	local plr=p
+runservice.Stepped:Connect(function()
+		local cam = workspace.CurrentCamera
+		if plr.Parent:FindFirstChildOfClass("Humanoid").Health>0 then
+		cam.CFrame=CFrame.new(cam.Focus.Position, plr.Parent.HumanoidRootPart.CFrame * Vector3.new(0, 0, 0))
+    end
+	end)
+end
+runservice.Stepped:Connect(function()
+	local m=game.Players.LocalPlayer:GetMouse()
+	if m.Target.Parent:FindFirstChildOfClass("Humanoid") then
+		startaim(m.Target)
+		end
+end)
